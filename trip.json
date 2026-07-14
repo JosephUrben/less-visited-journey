@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "demo": true,
+  "travellerName": "Sample Traveller",
+  "tripTitle": "Chile, Seen Differently",
+  "subtitle": "Santiago and Valparaíso",
+  "startDate": "2026-10-12",
+  "endDate": "2026-10-16",
+  "timezone": "America/Santiago",
+  "currency": "CLP",
+  "intro": "A slower five-day route combining neighbourhood walks, independent food, local design and coastal viewpoints. All content is demonstration data and must be verified before customer use.",
+  "days": [
+    {
+      "id": "day-1",
+      "date": "2026-10-12",
+      "location": "Santiago",
+      "theme": "Arrival and neighbourhood orientation",
+      "summary": "Settle in, learn the immediate area and begin with an unhurried evening.",
+      "activities": [
+        {
+          "id": "a1",
+          "time": "15:00",
+          "title": "Arrival and neighbourhood orientation",
+          "category": "practical",
+          "description": "Check in, confirm tomorrow’s transport options and take a short orientation walk around your accommodation area.",
+          "duration": "60–90 min",
+          "cost": "Free",
+          "address": "Santiago, Chile",
+          "latitude": -33.4489,
+          "longitude": -70.6693,
+          "verification": "Demo — verify before use"
+        },
+        {
+          "id": "a2",
+          "time": "18:30",
+          "title": "Lastarria evening walk",
+          "category": "culture",
+          "description": "Explore a compact cultural district at a gentle pace, noting galleries, bookshops and places to return to later.",
+          "duration": "2 hours",
+          "cost": "Flexible",
+          "address": "Barrio Lastarria, Santiago",
+          "latitude": -33.4388,
+          "longitude": -70.6402,
+          "verification": "Demo — verify before use"
+        }
+      ]
+    },
+    {
+      "id": "day-2",
+      "date": "2026-10-13",
+      "location": "Santiago",
+      "theme": "Markets, design and city viewpoints",
+      "summary": "A full day organised by neighbourhood to reduce unnecessary travel.",
+      "activities": [
+        {
+          "id": "a3",
+          "time": "09:00",
+          "title": "Independent breakfast and market context",
+          "category": "food",
+          "description": "Begin with a locally owned café, then walk through a nearby market area to understand everyday food culture rather than treating the market as a checklist stop.",
+          "duration": "2 hours",
+          "cost": "Moderate",
+          "address": "Central Santiago",
+          "latitude": -33.4372,
+          "longitude": -70.6506,
+          "verification": "Demo — verify venue and hours"
+        },
+        {
+          "id": "a4",
+          "time": "12:00",
+          "title": "Museum or design-space choice",
+          "category": "design",
+          "description": "Choose one focused cultural visit according to your energy and interests. Keep the other as a weather-proof alternative.",
+          "duration": "2–3 hours",
+          "cost": "Check current admission",
+          "address": "Santiago, Chile",
+          "latitude": -33.4445,
+          "longitude": -70.6542,
+          "verification": "Demo — confirm current exhibition"
+        },
+        {
+          "id": "a5",
+          "time": "17:00",
+          "title": "Late-afternoon city viewpoint",
+          "category": "viewpoint",
+          "description": "Reach a viewpoint before the evening rush, allowing time for changing light rather than a rushed photo stop.",
+          "duration": "90 min",
+          "cost": "Free or low cost",
+          "address": "Santiago, Chile",
+          "latitude": -33.4254,
+          "longitude": -70.6329,
+          "verification": "Demo — confirm access conditions"
+        }
+      ]
+    },
+    {
+      "id": "day-3",
+      "date": "2026-10-14",
+      "location": "Valparaíso",
+      "theme": "Travel to the coast and explore by hillside",
+      "summary": "Travel in the morning and organise the afternoon around one connected hillside area.",
+      "activities": [
+        {
+          "id": "a6",
+          "time": "09:00",
+          "title": "Transfer to Valparaíso",
+          "category": "transport",
+          "description": "Use the confirmed intercity connection and keep the booking reference available offline. Allow extra time between arrival and the first planned activity.",
+          "duration": "Approx. 2 hours plus transfers",
+          "cost": "Confirm ticket",
+          "address": "Valparaíso, Chile",
+          "latitude": -33.0472,
+          "longitude": -71.6127,
+          "verification": "Demo — confirm operator and timetable"
+        },
+        {
+          "id": "a7",
+          "time": "14:00",
+          "title": "Cerro Alegre and Concepción walking route",
+          "category": "walk",
+          "description": "Follow a connected route through hillside streets, small galleries and viewpoints. Avoid trying to cover every mural or funicular in one afternoon.",
+          "duration": "3 hours",
+          "cost": "Free; allow for refreshments",
+          "address": "Cerro Alegre, Valparaíso",
+          "latitude": -33.0417,
+          "longitude": -71.6276,
+          "verification": "Demo — review route and local conditions"
+        },
+        {
+          "id": "a8",
+          "time": "19:00",
+          "title": "Small-plate dinner near your return route",
+          "category": "food",
+          "description": "Choose a verified independent restaurant close to the route back to your accommodation, rather than crossing the city again at night.",
+          "duration": "90 min",
+          "cost": "Moderate",
+          "address": "Valparaíso, Chile",
+          "latitude": -33.0430,
+          "longitude": -71.6270,
+          "verification": "Demo — select and verify venue"
+        }
+      ]
+    },
+    {
+      "id": "day-4",
+      "date": "2026-10-15",
+      "location": "Valparaíso",
+      "theme": "Port history and a flexible creative afternoon",
+      "summary": "Combine one contextual morning visit with a choice-led afternoon.",
+      "activities": [
+        {
+          "id": "a9",
+          "time": "09:30",
+          "title": "Port-city context walk",
+          "category": "history",
+          "description": "Use a short guided or self-guided route to connect the port, migration history and the city’s distinctive urban form.",
+          "duration": "2 hours",
+          "cost": "Depends on guide",
+          "address": "Valparaíso port district",
+          "latitude": -33.0337,
+          "longitude": -71.6294,
+          "verification": "Demo — verify route safety and access"
+        },
+        {
+          "id": "a10",
+          "time": "13:30",
+          "title": "Choose-your-energy afternoon",
+          "category": "flexible",
+          "description": "Select one option: a design-focused visit, an extended café stop with sketching, or a second hillside walk. The app should present only verified alternatives.",
+          "duration": "2–4 hours",
+          "cost": "Flexible",
+          "address": "Valparaíso, Chile",
+          "latitude": -33.0458,
+          "longitude": -71.6197,
+          "verification": "Demo — alternatives not yet assigned"
+        }
+      ]
+    },
+    {
+      "id": "day-5",
+      "date": "2026-10-16",
+      "location": "Valparaíso / onward travel",
+      "theme": "A calm final morning",
+      "summary": "Leave room for one meaningful return visit rather than filling every remaining hour.",
+      "activities": [
+        {
+          "id": "a11",
+          "time": "09:00",
+          "title": "Return to your favourite area",
+          "category": "flexible",
+          "description": "Use saved places and personal notes to revisit the area that felt most rewarding, then collect luggage and continue your journey.",
+          "duration": "2 hours",
+          "cost": "Flexible",
+          "address": "Valparaíso, Chile",
+          "latitude": -33.0458,
+          "longitude": -71.6197,
+          "verification": "Traveller choice"
+        }
+      ]
+    }
+  ],
+  "practicalInfo": [
+    {
+      "title": "Before departure",
+      "items": [
+        "Download or print essential booking references.",
+        "Confirm entry requirements, insurance and current transport information from official sources.",
+        "Verify all places marked as demonstration data before publishing the customer trip."
+      ]
+    },
+    {
+      "title": "Offline use",
+      "items": [
+        "Open every app section once while connected so the latest version is cached.",
+        "Map navigation opens an external map service and normally requires a connection or downloaded map area.",
+        "Saved places, completion status and notes are stored only in this browser on this device."
+      ]
+    },
+    {
+      "title": "Emergency information",
+      "items": [
+        "Replace this demonstration section with verified official emergency numbers and embassy guidance for the customer.",
+        "Do not store passport scans, medical records or payment information in this static app."
+      ]
+    }
+  ]
+}
