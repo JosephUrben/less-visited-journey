@@ -1,4 +1,4 @@
-const CACHE_VERSION = "less-visited-v2";
+const CACHE_VERSION = "less-visited-v3-budget";
 const APP_ASSETS = [
   "./",
   "./index.html",
