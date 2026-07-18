@@ -1,64 +1,54 @@
-# Less Visited Journey — static PWA starter
+# Less Visited — My Journey companion
 
-A mobile-first, installable and offline-friendly travel companion designed for the first Less Visited prototype.
+A mobile-first, installable and offline-friendly customer companion for approved Less Visited journeys.
 
-## What this version does
+## MVP proposition
 
-- Displays a customer-specific day-by-day itinerary.
-- Chooses the relevant trip day automatically when the current date matches the itinerary.
-- Allows the traveller to save places, mark activities complete and add notes.
-- Stores those personal changes in the browser on the current device.
-- Opens each location in Google Maps.
-- Works offline after the first successful online visit.
-- Can be installed on supported phones and desktops.
-- Allows a trip JSON file to be previewed locally through the Info screen.
-- Can be published through GitHub Pages.
+The public website helps a traveller choose or request a journey. This companion helps them use the final, reviewed journey. Its defining value is curation, context, route logic and practical alternatives—not generic travel utilities.
 
-## What this version deliberately does not do
+## Companion screens
 
-- No customer accounts or passwords.
-- No secure private data storage.
-- No online payments.
-- No central database or automatic cross-device syncing.
-- No live AI assistant.
-- No secure API keys.
-- No live opening hours, weather, transport or booking data.
+- **Home:** before/during/after trip state, countdown or current plan, preparation and next actions.
+- **Journey:** complete itinerary, route logic, travel times, activity types and alternatives.
+- **Explore:** approved scheduled and unscheduled places with trip-relevant filters.
+- **Map:** branded route overview with external Google Maps or My Maps links.
+- **Saved:** local shortlist, personal notes and approved substitutions.
+- **Trip:** accommodation, bookings, checklists, simple budget, practical and emergency information, notes and data controls.
 
-Do not publish passport information, medical details, payment data or private booking documents in this repository.
+## Journey URLs
 
-## Edit the customer trip
+The default journey loads from `data/trip.json`.
 
-Replace the contents of `data/trip.json` using `TRIP-SCHEMA.md` as a guide. Keep every day ID and activity ID unique.
+Customer or reusable journeys can be stored in `data/journeys/` and opened with:
 
-For a different customer, the safest prototype workflow is to duplicate this repository into a separate private working repository, replace the trip data, review it, and then publish only information you are comfortable making accessible by URL. GitHub Pages is not a secure customer portal.
+```text
+https://josephurben.github.io/less-visited-journey/?trip=JRN-0001
+```
+
+The parameter accepts letters, numbers, hyphens and underscores only.
+
+## Deliberate MVP limits
+
+- No accounts, passwords or cross-device sync.
+- No live AI, weather, opening hours or transport APIs.
+- No payments or affiliate checkout inside the companion.
+- No secure document, passport, medical or payment storage.
+- No collaborative planning or photo storage.
+
+Saved places, progress, checklists, substitutions and notes remain in the current browser. They can be exported from the Trip screen.
 
 ## Preview locally
 
-A service worker requires a local web server; opening `index.html` directly as a file is not enough.
-
-Using Python:
+Run a local server from the repository root:
 
 ```bash
 python -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Then open `http://localhost:8080`. A service worker will not work when `index.html` is opened directly as a file.
 
-## Publish on GitHub Pages
+## Publish
 
-1. Create a new GitHub repository.
-2. Upload all files, including the hidden `.github` folder.
-3. Commit them to the `main` branch.
-4. Open **Settings → Pages**.
-5. Under **Build and deployment**, choose **GitHub Actions**.
-6. Open the **Actions** tab and check that the deployment completes.
-7. Open the generated Pages URL on your phone.
-8. On Android/Chrome, use the Install button or browser menu. On iPhone/Safari, use Share → Add to Home Screen.
+GitHub Pages must use **GitHub Actions** as its source. Every push to `main` runs `.github/workflows/pages.yml`. Increase `CACHE_VERSION` in `sw.js` whenever core cached files change.
 
-## Updating a published customer trip
-
-Edit `data/trip.json` and commit the change. The workflow republishes the app. Increase `CACHE_VERSION` in `sw.js` when changing core app files or when you need all cached assets refreshed.
-
-## Data warning
-
-Saved activities, completion status and notes are stored in `localStorage`. They do not automatically transfer to another device. The traveller can export this information from the Info screen.
+See `TRIP-SCHEMA.md` before publishing or automating a new journey JSON file.

@@ -1,13 +1,13 @@
 {
   "id": "./",
-  "name": "Less Visited Journey",
-  "short_name": "Less Visited",
-  "description": "A private, offline-friendly Less Visited travel companion.",
+  "name": "Less Visited — My Journey",
+  "short_name": "My Journey",
+  "description": "Your private, offline-friendly Less Visited journey companion.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f4f1e8",
-  "theme_color": "#153b34",
+  "background_color": "#eaf6f8",
+  "theme_color": "#087f9c",
   "orientation": "portrait-primary",
   "icons": [
     {

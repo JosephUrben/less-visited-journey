@@ -1,74 +1,70 @@
-# Less Visited trip JSON guide
+# Less Visited journey JSON guide
 
-The app reads `data/trip.json`.
+The companion uses schema version 2. The default demonstration is `data/trip.json`. Published journeys can also be stored in `data/journeys/` and loaded with `?trip=JOURNEY-ID`.
 
-## Required top-level fields
+## Core journey fields
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "journeyId": "JRN-0001",
+  "productType": "Personalised Journey",
   "demo": false,
-  "travellerName": "Customer first name",
-  "tripTitle": "Trip title",
+  "travellerName": "First name",
+  "destination": "Destination",
+  "tripTitle": "Journey title",
   "subtitle": "Regions or theme",
   "startDate": "2026-10-12",
   "endDate": "2026-10-16",
   "timezone": "America/Santiago",
   "currency": "CLP",
-  "intro": "Short trip introduction",
+  "intro": "Short customer-facing introduction",
+  "routeOverview": "Why the overall route works",
   "days": [],
-  "practicalInfo": []
+  "places": []
 }
 ```
 
-## Day structure
+## Day and activity
 
-```json
-{
-  "id": "day-1",
-  "date": "2026-10-12",
-  "location": "Santiago",
-  "theme": "Arrival and orientation",
-  "summary": "Short customer-facing summary",
-  "activities": []
-}
-```
+Each day needs `id`, `date`, `location`, `theme`, `summary`, `routeLogic` and `activities`.
 
-## Activity structure
+Each activity needs a unique `id`, `title`, `type` and, where relevant, a `placeId` matching an approved place. Supported types are:
 
-```json
-{
-  "id": "a1",
-  "time": "09:30",
-  "title": "Activity title",
-  "category": "culture",
-  "description": "Customer-facing explanation and practical advice.",
-  "duration": "2 hours",
-  "cost": "Approx. CLP 15,000",
-  "address": "Full or usable address",
-  "latitude": -33.4489,
-  "longitude": -70.6693,
-  "verification": "Verified 2026-10-01"
-}
-```
+- `fixed`
+- `suggested`
+- `optional`
+- `food`
+- `task`
 
-## Practical information structure
+Activities can also contain `time`, `description`, `duration`, `travelTime`, `cost`, `address`, coordinates, `practicalNote`, `alternative` and `verification`.
 
-```json
-{
-  "title": "Transport",
-  "items": [
-    "First verified instruction.",
-    "Second verified instruction."
-  ]
-}
-```
+## Approved places
 
-## Rules
+Each place should contain:
 
-- Every `day.id` and `activity.id` must be unique.
-- Use ISO dates: `YYYY-MM-DD`.
-- Use 24-hour times: `HH:MM`.
-- Do not include secrets or sensitive personal data.
-- Treat all prices, opening hours, transport details and access information as requiring verification.
-- Keep instructions short enough to read on a phone.
+- `id`, `name`, `destination`, `neighbourhood`, `category` and `description`;
+- coordinates or a `mapUrl`;
+- `practicalNote` and verification information;
+- filter `tags`, using any of `nearby`, `food`, `viewpoints`, `culture`, `rainy-day`, `free`, `evening`, `accessible`, `quick-stop`;
+- `scheduled`, `active`, and optionally `alternativeFor` plus `bestFor`.
+
+## Supporting trip data
+
+The companion also accepts:
+
+- `accommodation` object;
+- `bookings` array;
+- `preparationChecklist` and `packingChecklist` arrays;
+- simple `budget` rows;
+- `map` with summary, external route URLs and stops;
+- `practicalInfo` sections;
+- `emergencyInfo` array.
+
+## Publication rules
+
+- Use only approved places and reviewed route information.
+- Use ISO dates and 24-hour times.
+- Never invent opening hours, connections, prices or access information.
+- Do not include passport, medical, payment or other sensitive personal data.
+- Keep IDs stable so saved customer data continues to match after an update.

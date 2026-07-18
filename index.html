@@ -3,75 +3,80 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#153b34" />
-  <meta name="description" content="A private, offline-friendly Less Visited travel companion." />
+  <meta name="theme-color" content="#087f9c" />
+  <meta name="description" content="Your private, offline-friendly Less Visited journey companion." />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icons/icon-192.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <link rel="stylesheet" href="./styles.css" />
-  <title>Less Visited Journey</title>
+  <title>My Journey — Less Visited</title>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M6 16c0-6 12-2 12-8"/></symbol>
+    <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+    <symbol id="icon-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+    <symbol id="icon-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 13H5z"/><path d="M9 8V5a3 3 0 0 1 6 0v3"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v7H4V6h7"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></symbol>
+  </svg>
+
   <header class="app-header">
-    <div class="brand-lockup">
-      <div class="brand-mark" aria-hidden="true">LV</div>
+    <a class="brand-lockup" href="#home" aria-label="Less Visited My Journey home">
+      <div class="brand-mark" aria-hidden="true"><span>LV</span></div>
       <div>
         <p class="eyebrow">LESS VISITED</p>
-        <h1 id="app-title">Journey</h1>
+        <p class="product-name">My Journey</p>
       </div>
+    </a>
+    <div class="header-actions">
+      <span id="offline-pill" class="status-pill" hidden>Offline ready</span>
+      <button id="install-button" class="button button--small button--yellow" type="button" hidden>Install</button>
     </div>
-    <button id="install-button" class="button button--compact" type="button" hidden>Install</button>
   </header>
 
   <div id="network-status" class="network-status" role="status" aria-live="polite"></div>
   <div id="demo-warning" class="demo-warning" hidden></div>
 
   <main id="main" class="app-main" tabindex="-1">
-    <section id="view-today" class="view is-active" data-view="today" aria-labelledby="today-heading"></section>
+    <section id="view-home" class="view is-active" data-view="home" aria-labelledby="home-heading"></section>
     <section id="view-journey" class="view" data-view="journey" aria-labelledby="journey-heading"></section>
-    <section id="view-places" class="view" data-view="places" aria-labelledby="places-heading"></section>
+    <section id="view-explore" class="view" data-view="explore" aria-labelledby="explore-heading"></section>
+    <section id="view-map" class="view" data-view="map" aria-labelledby="map-heading"></section>
     <section id="view-saved" class="view" data-view="saved" aria-labelledby="saved-heading"></section>
-    <section id="view-info" class="view" data-view="info" aria-labelledby="info-heading"></section>
+    <section id="view-trip" class="view" data-view="trip" aria-labelledby="trip-heading"></section>
   </main>
 
-  <nav class="bottom-nav" aria-label="Primary navigation">
-    <button class="nav-item is-active" type="button" data-target="today" aria-current="page">
-      <span aria-hidden="true">◉</span><span>Today</span>
-    </button>
-    <button class="nav-item" type="button" data-target="journey">
-      <span aria-hidden="true">▤</span><span>Journey</span>
-    </button>
-    <button class="nav-item" type="button" data-target="places">
-      <span aria-hidden="true">⌖</span><span>Places</span>
-    </button>
-    <button class="nav-item" type="button" data-target="saved">
-      <span aria-hidden="true">♡</span><span>Saved</span>
-    </button>
-    <button class="nav-item" type="button" data-target="info">
-      <span aria-hidden="true">i</span><span>Info</span>
-    </button>
+  <nav class="bottom-nav" aria-label="Journey navigation">
+    <button class="nav-item is-active" type="button" data-target="home" aria-current="page"><svg><use href="#icon-home"/></svg><span>Home</span></button>
+    <button class="nav-item" type="button" data-target="journey"><svg><use href="#icon-route"/></svg><span>Journey</span></button>
+    <button class="nav-item" type="button" data-target="explore"><svg><use href="#icon-compass"/></svg><span>Explore</span></button>
+    <button class="nav-item" type="button" data-target="map"><svg><use href="#icon-map"/></svg><span>Map</span></button>
+    <button class="nav-item" type="button" data-target="saved"><svg><use href="#icon-heart"/></svg><span>Saved</span></button>
+    <button class="nav-item" type="button" data-target="trip"><svg><use href="#icon-bag"/></svg><span>Trip</span></button>
   </nav>
 
-  <template id="activity-template">
-    <article class="activity-card">
-      <div class="activity-card__topline">
-        <span class="activity-card__time"></span>
-        <span class="category-chip"></span>
+  <template id="place-template">
+    <article class="place-card">
+      <div class="place-card__visual"><span class="place-card__initials"></span><span class="place-card__status"></span></div>
+      <div class="place-card__content">
+        <div class="place-card__topline"><span class="category-chip"></span><span class="place-card__location"></span></div>
+        <h3 class="place-card__title"></h3>
+        <p class="place-card__description"></p>
+        <p class="place-card__note"></p>
+        <div class="place-card__actions">
+          <button class="icon-button save-button" type="button"></button>
+          <a class="icon-button map-button" target="_blank" rel="noopener noreferrer"><svg><use href="#icon-pin"/></svg> Map</a>
+        </div>
       </div>
-      <h3 class="activity-card__title"></h3>
-      <p class="activity-card__description"></p>
-      <dl class="activity-meta"></dl>
-      <div class="activity-actions">
-        <button class="icon-button save-button" type="button" aria-label="Save activity">♡ Save</button>
-        <button class="icon-button complete-button" type="button">✓ Done</button>
-        <a class="icon-button map-button" target="_blank" rel="noopener noreferrer">↗ Map</a>
-      </div>
-      <label class="notes-field">
-        <span>Personal note</span>
-        <textarea rows="2" placeholder="Add a note for this trip…"></textarea>
-      </label>
     </article>
   </template>
 

@@ -11,7 +11,11 @@ Requirements:
 - Do not invent places, prices, opening hours, routes, booking details or verification dates.
 - Where information is missing, use a clear value such as "Confirm before publication" rather than guessing.
 - Give every day and activity a unique stable ID.
+- Give every approved place a stable ID and link scheduled activities using placeId.
 - Use ISO dates and 24-hour times.
+- Distinguish fixed, suggested, optional, food and practical-task activities.
+- Include route logic, realistic stored travel times, practical notes and approved alternatives.
+- Add only relevant Explore filter tags defined in TRIP-SCHEMA.md.
 - Keep descriptions practical, concise and readable on a mobile phone.
 - Set "demo" to false only when Less Visited has verified the published content.
 - Do not include passport information, medical details, payment data, private booking documents or API keys.

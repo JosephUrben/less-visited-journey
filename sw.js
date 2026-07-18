@@ -1,4 +1,4 @@
-const CACHE_VERSION = "less-visited-v1";
+const CACHE_VERSION = "less-visited-v2";
 const APP_ASSETS = [
   "./",
   "./index.html",
@@ -6,8 +6,11 @@ const APP_ASSETS = [
   "./app.js",
   "./manifest.webmanifest",
   "./data/trip.json",
+  "./data/journeys/chile-seen-differently.json",
+  "./data/journeys/JRN-0001.json",
   "./icons/icon-192.png",
-  "./icons/icon-512.png"
+  "./icons/icon-512.png",
+  "./404.html"
 ];
 
 self.addEventListener("install", (event) => {
