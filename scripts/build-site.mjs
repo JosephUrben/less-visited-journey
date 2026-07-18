@@ -26,8 +26,13 @@ const serviceWorker = `const CACHE_VERSION = ${JSON.stringify(cacheVersion)};
 const APP_ASSETS = [
   "./",
   "./index.html",
+  "./flow.html",
   "./styles.css",
+  "./enhancements.css",
+  "./bootstrap.js",
+  "./journey-data-patch.js",
   "./app.js",
+  "./enhancements.js",
   "./manifest.webmanifest",
   "./data/trip.json",
   "./data/journeys/chile-seen-differently.json",
@@ -53,7 +58,7 @@ self.addEventListener("activate", (event) => {
 async function networkFirst(request, fallback) {
   const cache = await caches.open(CACHE_VERSION);
   try {
-    const response = await fetch(request);
+    const response = await fetch(request, { cache: "no-store" });
     if (response.ok) await cache.put(request, response.clone());
     return response;
   } catch (error) {
