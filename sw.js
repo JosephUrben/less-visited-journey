@@ -1,4 +1,4 @@
-const CACHE_VERSION = "less-visited-v4-reviewed-journey";
+const CACHE_VERSION = "less-visited-v5-chile-review";
 const APP_ASSETS = [
   "./",
   "./index.html",
@@ -6,6 +6,7 @@ const APP_ASSETS = [
   "./styles.css",
   "./enhancements.css",
   "./bootstrap.js",
+  "./journey-data-patch.js",
   "./app.js",
   "./enhancements.js",
   "./manifest.webmanifest",
