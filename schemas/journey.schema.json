@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://josephurben.github.io/less-visited-journey/schemas/journey.schema.json",
+  "title": "Less Visited Journey",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schemaVersion", "journeyId", "productType", "demo", "destination",
+    "tripTitle", "startDate", "endDate", "timezone", "currency", "intro",
+    "routeOverview", "days", "places"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "journeyId": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+    "productType": { "type": "string", "minLength": 1 },
+    "demo": { "type": "boolean" },
+    "travellerName": { "type": "string" },
+    "destination": { "type": "string", "minLength": 1 },
+    "tripTitle": { "type": "string", "minLength": 1 },
+    "subtitle": { "type": "string" },
+    "startDate": { "type": "string", "format": "date" },
+    "endDate": { "type": "string", "format": "date" },
+    "timezone": { "type": "string", "minLength": 1 },
+    "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+    "intro": { "type": "string", "minLength": 1 },
+    "routeOverview": { "type": "string", "minLength": 1 },
+    "days": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/day" }
+    },
+    "places": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/place" }
+    },
+    "accommodation": { "type": "object" },
+    "bookings": { "type": "array" },
+    "preparationChecklist": { "type": "array" },
+    "packingChecklist": { "type": "array" },
+    "budget": { "type": "array" },
+    "map": { "type": "object" },
+    "practicalInfo": { "type": "array" },
+    "emergencyInfo": { "type": "array" }
+  },
+  "$defs": {
+    "day": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "date", "location", "theme", "summary", "routeLogic", "activities"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+        "date": { "type": "string", "format": "date" },
+        "location": { "type": "string", "minLength": 1 },
+        "theme": { "type": "string", "minLength": 1 },
+        "summary": { "type": "string", "minLength": 1 },
+        "routeLogic": { "type": "string", "minLength": 1 },
+        "activities": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/activity" }
+        }
+      }
+    },
+    "activity": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "title", "type"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+        "placeId": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+        "time": {
+          "anyOf": [
+            { "type": "string", "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$" },
+            { "const": "Flexible" }
+          ]
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "type": { "enum": ["fixed", "suggested", "optional", "food", "task"] },
+        "description": { "type": "string" },
+        "duration": { "type": "string" },
+        "travelTime": { "type": "string" },
+        "cost": { "type": "string" },
+        "address": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "practicalNote": { "type": "string" },
+        "alternative": { "type": "string" },
+        "verification": { "type": "string" }
+      }
+    },
+    "place": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "name", "destination", "category", "description", "scheduled", "active"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+        "name": { "type": "string", "minLength": 1 },
+        "destination": { "type": "string", "minLength": 1 },
+        "neighbourhood": { "type": "string" },
+        "category": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "address": { "type": "string" },
+        "mapUrl": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "practicalNote": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "scheduled": { "type": "boolean" },
+        "active": { "type": "boolean" },
+        "alternativeFor": { "type": "string" },
+        "bestFor": { "type": "string" }
+      },
+      "anyOf": [
+        { "required": ["mapUrl"] },
+        { "required": ["address"] },
+        { "required": ["latitude", "longitude"] }
+      ]
+    }
+  }
+}
