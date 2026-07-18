@@ -1,0 +1,66 @@
+body.reviewer-mode::before {
+  content: "INTERNAL REVIEW MODE";
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  display: block;
+  padding: .45rem 1rem;
+  background: #173f49;
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-align: center;
+}
+
+.reviewer-panel {
+  display: grid;
+  gap: .8rem;
+  margin: 1rem 0;
+  padding: .9rem;
+  border: 1px solid #a9d2da;
+  border-radius: 16px;
+  background: #eef9fb;
+}
+
+.reviewer-panel p {
+  margin: .25rem 0 0;
+  color: var(--muted);
+}
+
+.reviewer-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.reviewer-danger {
+  border-color: #d8a59a !important;
+  color: #8c3d2f !important;
+}
+
+.reviewer-submit-status {
+  min-height: 1.2rem;
+  margin: 0;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.reviewer-submit-status[data-kind="success"] { color: var(--green); }
+.reviewer-submit-status[data-kind="error"] { color: #8c3d2f; }
+.reviewer-submit-status[data-kind="neutral"] { color: var(--muted); }
+
+body:not(.reviewer-mode) [data-approve-journey] {
+  display: none !important;
+}
+
+@media (min-width: 720px) {
+  .reviewer-panel {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .reviewer-submit-status {
+    grid-column: 1 / -1;
+  }
+}
