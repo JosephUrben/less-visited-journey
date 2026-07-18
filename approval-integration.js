@@ -48,6 +48,7 @@ function installApprovalEventInterceptors() {
     if (connectButton) {
       event.preventDefault();
       configureReviewConnection();
+      document.querySelector(".reviewer-panel")?.remove();
       applyApprovalMode();
       return;
     }
@@ -191,13 +192,18 @@ async function submitReviewDecision(decision, reviewerNotes, button) {
   };
 
   try {
+    const formBody = new URLSearchParams();
+    Object.entries(payload).forEach(([key, value]) => formBody.set(key, String(value ?? "")));
+
     const response = await fetch(endpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+      mode: "no-cors",
+      body: formBody
     });
 
-    if (!response.ok) throw new Error(`Make returned HTTP ${response.status}`);
+    if (response.type !== "opaque" && !response.ok) {
+      throw new Error(`Make returned HTTP ${response.status}`);
+    }
 
     const approvalStatus = decision.startsWith("Approve") ? "approved" : decision === "Reject" ? "rejected" : "changes_requested";
     localStorage.setItem(`less-visited-approval:${approvalIntegration.tripId}`, JSON.stringify({
@@ -208,14 +214,14 @@ async function submitReviewDecision(decision, reviewerNotes, button) {
     }));
 
     setReviewerStatus(decision.startsWith("Approve")
-      ? "Approval sent. Make can now publish the final journey and email the customer."
-      : `${decision} sent to Make.`, "success");
+      ? "Approval submitted. Check the Make run and customer-delivery status."
+      : `${decision} submitted to Make.`, "success");
 
-    if (button) button.textContent = decision.startsWith("Approve") ? "Approval sent" : "Sent";
+    if (button) button.textContent = decision.startsWith("Approve") ? "Approval submitted" : "Submitted";
     return true;
   } catch (error) {
     console.error("Approval submission failed", error);
-    setReviewerStatus(`Could not reach Make: ${error.message}`, "error");
+    setReviewerStatus(`Could not submit to Make: ${error.message}`, "error");
     if (button) button.textContent = originalText || "Try again";
     return false;
   } finally {
