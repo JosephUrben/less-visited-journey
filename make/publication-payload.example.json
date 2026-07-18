@@ -1,0 +1,13 @@
+{
+  "journey_id": "JRN-0001",
+  "public_trip_id": "LV-7F4A9C2D81B6",
+  "workflow_status": "Approved",
+  "approved_json": "{\"schemaVersion\":2,\"journeyId\":\"JRN-0001\",\"productType\":\"Personalised Journey\",\"demo\":false,\"destination\":\"Chile\",\"tripTitle\":\"Chile, Seen Differently\",\"startDate\":\"2026-10-12\",\"endDate\":\"2026-10-16\",\"timezone\":\"America/Santiago\",\"currency\":\"CLP\",\"intro\":\"Approved introduction\",\"routeOverview\":\"Approved route logic\",\"days\":[],\"places\":[]}",
+  "github": {
+    "repository": "JosephUrben/less-visited-journey",
+    "branch": "main",
+    "path": "data/journeys/LV-7F4A9C2D81B6.json",
+    "commit_message": "Publish journey JRN-0001"
+  },
+  "customer_url": "https://josephurben.github.io/less-visited-journey/?trip=LV-7F4A9C2D81B6#home"
+}
