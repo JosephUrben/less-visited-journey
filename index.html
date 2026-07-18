@@ -9,6 +9,7 @@
   <link rel="icon" href="./icons/icon-192.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./enhancements.css" />
   <title>My Journey — Less Visited</title>
 </head>
 <body>
@@ -28,6 +29,7 @@
     <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
     <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></symbol>
     <symbol id="icon-wallet" viewBox="0 0 24 24"><path d="M4 6h14a2 2 0 0 1 2 2v11H4a2 2 0 0 1-2-2V6a3 3 0 0 1 3-3h12v3"/><path d="M15 11h7v5h-7a2 2 0 0 1 0-5z"/></symbol>
+    <symbol id="icon-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
   </svg>
 
   <header class="app-header">
@@ -62,9 +64,10 @@
     <button class="nav-item" type="button" data-target="journey"><svg><use href="#icon-route"/></svg><span>Journey</span></button>
     <button class="nav-item" type="button" data-target="explore"><svg><use href="#icon-compass"/></svg><span>Explore</span></button>
     <button class="nav-item" type="button" data-target="map"><svg><use href="#icon-map"/></svg><span>Map</span></button>
-    <button class="nav-item" type="button" data-target="saved"><svg><use href="#icon-heart"/></svg><span>Saved</span></button>
+    <button class="nav-item nav-item--secondary" type="button" data-target="saved"><svg><use href="#icon-heart"/></svg><span>Saved</span></button>
     <button class="nav-item" type="button" data-target="budget"><svg><use href="#icon-wallet"/></svg><span>Budget</span></button>
-    <button class="nav-item" type="button" data-target="trip"><svg><use href="#icon-bag"/></svg><span>Trip</span></button>
+    <button class="nav-item nav-item--secondary" type="button" data-target="trip"><svg><use href="#icon-bag"/></svg><span>Trip</span></button>
+    <button class="nav-more" type="button"><svg><use href="#icon-more"/></svg><span>More</span></button>
   </nav>
 
   <template id="place-template">
@@ -83,6 +86,8 @@
     </article>
   </template>
 
+  <script src="./bootstrap.js"></script>
   <script src="./app.js" type="module"></script>
+  <script src="./enhancements.js" type="module"></script>
 </body>
 </html>
