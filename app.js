@@ -507,7 +507,8 @@ function renderTrip() {
   const budgetTotal = budget.reduce((sum, item) => sum + Number(item.amount || 0), 0);
   const cfg = budgetConfig();
   const actualSpend = budgetState().expenses.reduce((sum, expense) => sum + Number(expense.homeAmount || 0), 0);
-  const budgetRemaining = cfg.mode === "tracking" ? null : cfg.amount - actualSpend;
+  const dashboardDays = Math.max(1, Math.min(cfg.tripDays, differenceInDays(cfg.startDate, todayInTripTimezone()) + 1));
+  const budgetRemaining = cfg.mode === "tracking" ? null : budgetAllowance(cfg, dashboardDays) - attributedTotal(new Date());
   container.innerHTML = `
     <div class="section-heading"><div><p class="section-label">Practical companion</p><h2 id="trip-heading">Trip</h2><p>Bookings, preparation, budget, notes and essential information.</p></div></div>
     <div class="trip-grid">
