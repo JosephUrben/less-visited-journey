@@ -1,0 +1,29 @@
+{
+  "submission_id": "tally-demo-001",
+  "submitted_at": "2026-07-18T12:00:00Z",
+  "product_type": "Personalised Journey",
+  "customer": {
+    "first_name": "Alex",
+    "email": "alex@example.com",
+    "consent_status": "Granted"
+  },
+  "trip": {
+    "destination": "Chile",
+    "start_date": "2026-10-12",
+    "end_date": "2026-10-16",
+    "accommodation_area": "Lastarria",
+    "arrival_details": "Arrives SCL at 11:20",
+    "departure_details": "Departs Valparaiso at 14:00",
+    "travellers": 2,
+    "interests": ["food", "design", "viewpoints"],
+    "preferred_pace": "Moderate",
+    "budget_style": "Mid-range",
+    "transport_preferences": ["walking", "public transport"],
+    "food_requirements": "Vegetarian-friendly",
+    "mobility_requirements": "None",
+    "essential_attractions": ["Valparaiso hills"],
+    "existing_bookings": [],
+    "day_trip_interest": true,
+    "additional_information": "Prefer independent businesses."
+  }
+}
