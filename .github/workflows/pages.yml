@@ -17,10 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,6 +32,7 @@ jobs:
           node --check bootstrap.js
           node --check journey-data-patch.js
           node --check enhancements.js
+          node --check approval-integration.js
           node --check sw.js
           node --check scripts/build-site.mjs
           node --check scripts/validate-journeys.mjs
@@ -42,15 +40,29 @@ jobs:
         run: node scripts/validate-journeys.mjs
       - name: Build site
         run: node scripts/build-site.mjs
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build site
+        run: node scripts/build-site.mjs
       - name: Configure Pages
-        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
       - name: Upload site
-        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: "dist"
       - name: Deploy
-        if: github.event_name != 'pull_request'
         id: deployment
         uses: actions/deploy-pages@v4
