@@ -1,9 +1,13 @@
-const CACHE_VERSION = "less-visited-v3-budget";
+const CACHE_VERSION = "less-visited-v4-reviewed-journey";
 const APP_ASSETS = [
   "./",
   "./index.html",
+  "./flow.html",
   "./styles.css",
+  "./enhancements.css",
+  "./bootstrap.js",
   "./app.js",
+  "./enhancements.js",
   "./manifest.webmanifest",
   "./data/trip.json",
   "./data/journeys/chile-seen-differently.json",
@@ -34,15 +38,12 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== self.location.origin) return;
 
   if (request.mode === "navigate") {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_VERSION).then((cache) => cache.put(request, copy));
-          return response;
-        })
-        .catch(() => caches.match("./index.html"))
-    );
+    event.respondWith(networkFirst(request, "./index.html"));
+    return;
+  }
+
+  if (/\/data\/(?:journeys\/[^/]+|trip)\.json$/.test(url.pathname)) {
+    event.respondWith(networkFirst(request));
     return;
   }
 
@@ -56,3 +57,16 @@ self.addEventListener("fetch", (event) => {
     }))
   );
 });
+
+async function networkFirst(request, fallbackPath) {
+  try {
+    const response = await fetch(request, { cache: "no-store" });
+    if (response.ok) {
+      const cache = await caches.open(CACHE_VERSION);
+      await cache.put(request, response.clone());
+    }
+    return response;
+  } catch {
+    return (await caches.match(request)) || (fallbackPath ? await caches.match(fallbackPath) : Response.error());
+  }
+}
