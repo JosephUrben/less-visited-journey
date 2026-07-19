@@ -26,17 +26,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Check JavaScript syntax
+      - name: Check source JavaScript syntax
         run: |
           node --check app.js
           node --check bootstrap.js
           node --check journey-data-patch.js
           node --check journey-v4-patch.js
-          node --check navigation-recovery.js
-          node --check enhancements.js
-          node --check approval-integration.js
-          node --check product-v4.js
-          node --check group-currency-guard.js
+          node --check product-v5.js
           node --check sw.js
           node --check scripts/build-site.mjs
           node --check scripts/validate-journeys.mjs
@@ -44,6 +40,14 @@ jobs:
         run: node scripts/validate-journeys.mjs
       - name: Build site
         run: node scripts/build-site.mjs
+      - name: Check production bundle
+        run: |
+          node --check dist/app.js
+          node --check dist/product-v5.js
+          node --check dist/sw.js
+          grep -q 'lessvisited:viewrendered' dist/app.js
+          grep -q 'product-v5.js' dist/index.html
+          if grep -q 'product-v4.js\|enhancements.js\|approval-integration.js\|navigation-recovery.js' dist/index.html; then exit 1; fi
 
   deploy:
     if: github.event_name != 'pull_request'

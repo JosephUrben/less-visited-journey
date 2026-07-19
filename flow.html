@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#087f9c">
   <meta name="description" content="Less Visited customer journey prototype: request, review, approve and use a personalised journey.">
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./enhancements.css">
+  <link rel="stylesheet" href="./styles.css?v=build">
+  <link rel="stylesheet" href="./product-v5.css?v=build">
   <title>How Less Visited Works</title>
 </head>
 <body>
@@ -23,107 +23,23 @@
       <span class="stage-badge">A reviewed journey, not a generic itinerary</span>
       <h1>From your travel style to a journey you can actually use.</h1>
       <p>This clickable product-flow prototype shows the stages that sit before the offline companion: choosing the service, sharing preferences, reviewing the route, requesting changes and receiving the approved journey.</p>
-      <div class="panel-actions">
-        <a class="button button--yellow" href="#choose">Start the demonstration</a>
-        <a class="button" href="./?trip=JRN-0001#journey">See the finished Chile journey</a>
-      </div>
+      <div class="panel-actions"><a class="button button--yellow" href="#choose">Start the demonstration</a><a class="button" href="./?trip=JRN-0001#journey">See the finished Chile journey</a></div>
     </section>
 
-    <section id="choose" class="flow-step">
-      <span class="flow-step__number">1</span>
-      <h2>Choose the right starting point</h2>
-      <p>Travellers can begin with inspiration or ask Less Visited to build and review a complete personal journey.</p>
-      <div class="flow-choice-grid">
-        <article class="flow-choice">
-          <p class="section-label">Free</p>
-          <h3>Route inspiration</h3>
-          <p>A concise route outline with neighbourhood logic and a small selection of places. Designed to help a traveller decide where to focus.</p>
-        </article>
-        <article class="flow-choice flow-choice--featured">
-          <p class="section-label">£39–£59</p>
-          <h3>Personalised reviewed journey</h3>
-          <p>A detailed day-by-day route, named recommendations, alternatives, practical checks, map links and the offline companion. Complex or premium journeys can be priced separately after the request is reviewed.</p>
-        </article>
-      </div>
-    </section>
+    <section id="choose" class="flow-step"><span class="flow-step__number">1</span><h2>Choose the right starting point</h2><p>Travellers can begin with inspiration or ask Less Visited to build and review a complete personal journey.</p><div class="flow-choice-grid"><article class="flow-choice"><p class="section-label">Free</p><h3>Route inspiration</h3><p>A concise route outline with neighbourhood logic and a small selection of places.</p></article><article class="flow-choice flow-choice--featured"><p class="section-label">£39–£59</p><h3>Personalised reviewed journey</h3><p>A detailed day-by-day route, named recommendations, alternatives, practical checks, map links and the offline companion.</p></article></div></section>
 
-    <section class="flow-step">
-      <span class="flow-step__number">2</span>
-      <h2>Tell us how you travel</h2>
-      <form class="demo-intake" id="demo-intake">
-        <label>Destination and dates
-          <input value="Santiago and Valparaíso · 12–16 October 2026">
-        </label>
-        <label>Preferred pace
-          <select><option>Balanced: one anchor and flexible choices</option><option>Slow</option><option>Full</option></select>
-        </label>
-        <label>What should the journey prioritise?
-          <input value="Neighbourhood culture, independent food, viewpoints and design">
-        </label>
-        <label>What should it avoid?
-          <input value="Long attraction checklists, repeated cross-city travel and late-night transfers">
-        </label>
-        <label>Anything important?
-          <textarea rows="3">Keep walking realistic; include weather alternatives; explain why each route works.</textarea>
-        </label>
-        <button class="button button--yellow" type="submit">Create preview</button>
-        <p id="intake-result" role="status"></p>
-      </form>
-    </section>
+    <section class="flow-step"><span class="flow-step__number">2</span><h2>Tell us how you travel</h2><form class="demo-intake" id="demo-intake"><label>Destination and dates<input value="Santiago and Valparaíso · 12–16 October 2026"></label><label>Preferred pace<select><option>Balanced: one anchor and flexible choices</option><option>Slow</option><option>Full</option></select></label><label>What should the journey prioritise?<input value="Neighbourhood culture, independent food, viewpoints and design"></label><label>What should it avoid?<input value="Long attraction checklists, repeated cross-city travel and late-night transfers"></label><label>Anything important?<textarea rows="3">Keep walking realistic; include weather alternatives; explain why each route works.</textarea></label><button class="button button--yellow" type="submit">Create preview</button><p id="intake-result" role="status"></p></form></section>
 
-    <section class="flow-step" id="preview">
-      <span class="flow-step__number">3</span>
-      <h2>Review the route before the detail is finalised</h2>
-      <p>The preview demonstrates route logic first, so the traveller can correct the shape of the journey before Less Visited verifies every recommendation.</p>
-      <div class="preview-route">
-        <div><span>1</span><p><strong>Lastarria arrival</strong><br>Stay local after travel: orientation, GAM architecture and an independent dinner.</p></div>
-        <div><span>2</span><p><strong>Contemporary culture and the city from above</strong><br>MAVI UC, La Chascona and Cerro San Cristóbal without unnecessary backtracking.</p></div>
-        <div><span>3</span><p><strong>Memory, then the coast</strong><br>Museo de la Memoria before a verified intercity transfer to Valparaíso.</p></div>
-        <div><span>4</span><p><strong>Valparaíso by connected hillsides</strong><br>Baburizza, historic ascensores, viewpoints and responsible local seafood.</p></div>
-        <div><span>5</span><p><strong>A quieter final morning</strong><br>La Sebastiana and Cerro Bellavista, kept close to luggage and departure.</p></div>
-      </div>
-      <div class="panel-actions">
-        <button class="button button--green" type="button" id="demo-approve">Approve route</button>
-        <a class="button button--yellow" href="./?trip=JRN-0001#home">Request changes in companion</a>
-      </div>
-      <p id="approval-result" role="status"></p>
-    </section>
+    <section class="flow-step" id="preview"><span class="flow-step__number">3</span><h2>Review the route before the detail is finalised</h2><p>The preview demonstrates route logic first, so the traveller can correct the journey before Less Visited verifies every recommendation.</p><div class="preview-route"><div><span>1</span><p><strong>Lastarria arrival</strong><br>Orientation, GAM architecture and an independent dinner.</p></div><div><span>2</span><p><strong>Contemporary culture and the city from above</strong><br>MAVI UC, La Chascona and Cerro San Cristóbal.</p></div><div><span>3</span><p><strong>Memory, then the coast</strong><br>Museo de la Memoria before the transfer to Valparaíso.</p></div><div><span>4</span><p><strong>Valparaíso by connected hillsides</strong><br>Baburizza, ascensores, viewpoints and seafood.</p></div><div><span>5</span><p><strong>A quieter final morning</strong><br>La Sebastiana and Cerro Bellavista.</p></div></div><div class="panel-actions"><button class="button button--green" type="button" id="demo-approve">Approve route</button><a class="button button--yellow" href="./?trip=JRN-0001#home">Request changes in companion</a></div><p id="approval-result" role="status"></p></section>
 
-    <section class="flow-step">
-      <span class="flow-step__number">4</span>
-      <h2>Less Visited verifies and publishes the journey</h2>
-      <p>The production workflow would combine the intake database, structured AI generation, human editing, official-source checks and versioned publication. The traveller then receives one personal link.</p>
-      <ul>
-        <li>Named places and realistic neighbourhood grouping</li>
-        <li>Opening, access and booking checks with recheck dates</li>
-        <li>Alternatives for weather, energy and closures</li>
-        <li>Journey version, approval status and change requests</li>
-        <li>Offline access with live maps kept external</li>
-      </ul>
-    </section>
+    <section class="flow-step"><span class="flow-step__number">4</span><h2>Less Visited verifies and publishes the journey</h2><p>The production workflow combines structured generation, human editing, official-source checks and versioned publication.</p><ul><li>Named places and realistic neighbourhood grouping</li><li>Opening, access and booking checks</li><li>Alternatives for weather, energy and closures</li><li>Journey version, approval status and change requests</li><li>Offline access with live maps kept external</li></ul></section>
 
-    <section class="flow-step">
-      <span class="flow-step__number">5</span>
-      <h2>Use the journey before, during and after travel</h2>
-      <p>The companion changes with the trip stage, stores each journey separately on the device and keeps approved information available offline.</p>
-      <div class="panel-actions">
-        <a class="button button--primary" href="./?trip=JRN-0001#home">Open Home</a>
-        <a class="button" href="./?trip=JRN-0001#journey">Open itinerary</a>
-        <a class="button" href="./?trip=JRN-0001#budget">Open budget</a>
-      </div>
-    </section>
+    <section class="flow-step"><span class="flow-step__number">5</span><h2>Use the journey before, during and after travel</h2><p>The companion changes with the trip stage, stores each journey separately and loads heavier sections only when opened.</p><div class="panel-actions"><a class="button button--primary" href="./?trip=JRN-0001#home">Open Home</a><a class="button" href="./?trip=JRN-0001#journey">Open itinerary</a><a class="button" href="./?trip=JRN-0001#budget">Open budget</a></div></section>
   </main>
 
   <script>
-    document.querySelector("#demo-intake").addEventListener("submit", (event) => {
-      event.preventDefault();
-      document.querySelector("#intake-result").textContent = "Preview created for the prototype. In production, this would create a database record and structured draft.";
-      document.querySelector("#preview").scrollIntoView({ behavior: "smooth" });
-    });
-    document.querySelector("#demo-approve").addEventListener("click", () => {
-      localStorage.setItem("less-visited-approval:JRN-0001", JSON.stringify({ status: "approved", updatedAt: new Date().toISOString() }));
-      document.querySelector("#approval-result").textContent = "Route approved on this device. Open the companion to see the updated journey status.";
-    });
+    document.querySelector("#demo-intake").addEventListener("submit", (event) => { event.preventDefault(); document.querySelector("#intake-result").textContent = "Preview created for the prototype."; document.querySelector("#preview").scrollIntoView({ behavior: "smooth" }); });
+    document.querySelector("#demo-approve").addEventListener("click", () => { localStorage.setItem("less-visited-approval:JRN-0001", JSON.stringify({ status: "approved", updatedAt: new Date().toISOString() })); document.querySelector("#approval-result").textContent = "Route approved on this device."; });
   </script>
 </body>
 </html>
