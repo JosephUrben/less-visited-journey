@@ -1,22 +1,22 @@
 (() => {
   const PLACE_META = {
-    "pla-gam": { latitude: -33.4431, longitude: -70.6408, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Barrio%20Lastarria%20Santiago.jpg?width=1200", openingHours: "Mo-Su 09:00-22:00" },
-    "pla-chipe": { latitude: -33.4386, longitude: -70.6404, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Barrio%20Lastarria%202025%202.jpg?width=1200", openingHours: "Mo-Su 12:30-23:30" },
-    "pla-mavi": { latitude: -33.4381, longitude: -70.6408, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Paseo%20Barrio%20Lastarria%2C%20Santiago%2020230421.jpg?width=1200", openingHours: "Tu-Su 10:00-18:00; Mo off" },
-    "pla-bocanariz": { latitude: -33.4387, longitude: -70.6405, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Barrio%20Lastarria%202025%2018.jpg?width=1200", openingHours: "Mo-Su 12:30-23:30" },
-    "pla-chascona": { latitude: -33.4329, longitude: -70.6344, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Santiago%2C%20Chile.jpg?width=1200", openingHours: "Tu-Su 10:00-18:00; Mo off" },
-    "pla-san-cristobal": { latitude: -33.4254, longitude: -70.6329, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20of%20Santiago%20with%20San%20Crist%C3%B3bal%20hill%20at%20the%20back%20%28Northeast%20view%2002%29.JPG?width=1200", openingHours: "Mo-Su 10:00-18:45" },
-    "pla-santa-lucia": { latitude: -33.4404, longitude: -70.6439, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Downtown%20Santiago%20Skyline.jpg?width=1200", openingHours: "Mo-Su 09:00-19:00" },
-    "pla-memory": { latitude: -33.4399, longitude: -70.6794, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/2013%20Santiago%20skyline.jpg?width=1200", openingHours: "Tu-Su 10:00-18:00; Mo off" },
-    "pla-cclm": { latitude: -33.4431, longitude: -70.6535, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Santiago%20Skyline.jpg?width=1200", openingHours: "Tu-Su 10:00-19:30; Mo off" },
-    "pla-dimalow": { latitude: -33.0444, longitude: -71.6256, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cerro%20Artilleria%2C%20Valpara%C3%ADso%20%2840046992562%29.jpg?width=1200", openingHours: "24/7" },
-    "pla-laconcepcion": { latitude: -33.0419, longitude: -71.6265, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cerro%20Artilleria%2C%20Valpara%C3%ADso%20%2840046992562%29.jpg?width=1200", openingHours: "Mo-Sa 13:00-23:00; Su 13:00-18:00" },
-    "pla-fauna": { latitude: -33.0443, longitude: -71.6262, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cerro%20Artilleria%2C%20Valpara%C3%ADso%20%2840046992562%29.jpg?width=1200", openingHours: "Mo-Su 13:00-23:00" },
-    "pla-baburizza": { latitude: -33.0398, longitude: -71.6282, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cerro%20Artilleria%2C%20Valpara%C3%ADso%20%2840046992562%29.jpg?width=1200", openingHours: "Tu-Su 10:00-18:00; Mo off" },
-    "pla-trespeces": { latitude: -33.0430, longitude: -71.6253, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cerro%20Artilleria%2C%20Valpara%C3%ADso%20%2840046992562%29.jpg?width=1200", openingHours: "We-Su 13:00-16:00; Mo-Tu off" },
-    "pla-cerros": { latitude: -33.0420, longitude: -71.6265, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cerro%20Artilleria%2C%20Valpara%C3%ADso%20%2840046992562%29.jpg?width=1200", openingHours: "24/7" },
-    "pla-sebastiana": { latitude: -33.0474, longitude: -71.6200, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cerro%20Artilleria%2C%20Valpara%C3%ADso%20%2840046992562%29.jpg?width=1200", openingHours: "Tu-Su 10:00-18:00; Mo off" },
-    "pla-departure": { latitude: -33.0478, longitude: -71.6036, imageUrl: "https://commons.wikimedia.org/wiki/Special:FilePath/Cerro%20Artilleria%2C%20Valpara%C3%ADso%20%2840046992562%29.jpg?width=1200", openingHours: "24/7" }
+    "pla-gam": { latitude: -33.4431, longitude: -70.6408, imageUrl: "./assets/place-art/lastarria.svg", openingHours: "Mo-Su 09:00-22:00" },
+    "pla-chipe": { latitude: -33.4386, longitude: -70.6404, imageUrl: "./assets/place-art/lastarria.svg", openingHours: "Mo-Su 12:30-23:30" },
+    "pla-mavi": { latitude: -33.4381, longitude: -70.6408, imageUrl: "./assets/place-art/lastarria.svg", openingHours: "Tu-Su 10:00-18:00; Mo off" },
+    "pla-bocanariz": { latitude: -33.4387, longitude: -70.6405, imageUrl: "./assets/place-art/lastarria.svg", openingHours: "Mo-Su 12:30-23:30" },
+    "pla-chascona": { latitude: -33.4329, longitude: -70.6344, imageUrl: "./assets/place-art/santiago-hills.svg", openingHours: "Tu-Su 10:00-18:00; Mo off" },
+    "pla-san-cristobal": { latitude: -33.4254, longitude: -70.6329, imageUrl: "./assets/place-art/santiago-hills.svg", openingHours: "Mo-Su 10:00-18:45" },
+    "pla-santa-lucia": { latitude: -33.4404, longitude: -70.6439, imageUrl: "./assets/place-art/santiago-hills.svg", openingHours: "Mo-Su 09:00-19:00" },
+    "pla-memory": { latitude: -33.4399, longitude: -70.6794, imageUrl: "./assets/place-art/memory.svg", openingHours: "Tu-Su 10:00-18:00; Mo off" },
+    "pla-cclm": { latitude: -33.4431, longitude: -70.6535, imageUrl: "./assets/place-art/memory.svg", openingHours: "Tu-Su 10:00-19:30; Mo off" },
+    "pla-dimalow": { latitude: -33.0444, longitude: -71.6256, imageUrl: "./assets/place-art/valparaiso.svg", openingHours: "24/7" },
+    "pla-laconcepcion": { latitude: -33.0419, longitude: -71.6265, imageUrl: "./assets/place-art/valparaiso.svg", openingHours: "Mo-Sa 13:00-23:00; Su 13:00-18:00" },
+    "pla-fauna": { latitude: -33.0443, longitude: -71.6262, imageUrl: "./assets/place-art/valparaiso.svg", openingHours: "Mo-Su 13:00-23:00" },
+    "pla-baburizza": { latitude: -33.0398, longitude: -71.6282, imageUrl: "./assets/place-art/valparaiso.svg", openingHours: "Tu-Su 10:00-18:00; Mo off" },
+    "pla-trespeces": { latitude: -33.0430, longitude: -71.6253, imageUrl: "./assets/place-art/coast.svg", openingHours: "We-Su 13:00-16:00; Mo-Tu off" },
+    "pla-cerros": { latitude: -33.0420, longitude: -71.6265, imageUrl: "./assets/place-art/valparaiso.svg", openingHours: "24/7" },
+    "pla-sebastiana": { latitude: -33.0474, longitude: -71.6200, imageUrl: "./assets/place-art/valparaiso.svg", openingHours: "Tu-Su 10:00-18:00; Mo off" },
+    "pla-departure": { latitude: -33.0478, longitude: -71.6036, imageUrl: "./assets/place-art/coast.svg", openingHours: "24/7" }
   };
 
   const expandedPreparation = [
