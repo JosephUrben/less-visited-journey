@@ -32,6 +32,7 @@ jobs:
           node --check bootstrap.js
           node --check journey-data-patch.js
           node --check journey-v4-patch.js
+          node --check navigation-recovery.js
           node --check enhancements.js
           node --check approval-integration.js
           node --check product-v4.js
