@@ -34,6 +34,7 @@ const APP_ASSETS = [
   "./bootstrap.js",
   "./journey-data-patch.js",
   "./journey-v4-patch.js",
+  "./navigation-recovery.js",
   "./app.js",
   "./enhancements.js",
   "./approval-integration.js",
@@ -88,6 +89,11 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (/\\/data\\/journeys\\/[A-Za-z0-9_-]+\\.json$/.test(url.pathname) || url.pathname.endsWith("/data/trip.json")) {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  if (/\\.(?:js|css)$/.test(url.pathname) || url.pathname.endsWith("/manifest.webmanifest")) {
     event.respondWith(networkFirst(request));
     return;
   }
