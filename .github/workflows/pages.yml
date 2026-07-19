@@ -31,8 +31,11 @@ jobs:
           node --check app.js
           node --check bootstrap.js
           node --check journey-data-patch.js
+          node --check journey-v4-patch.js
           node --check enhancements.js
           node --check approval-integration.js
+          node --check product-v4.js
+          node --check group-currency-guard.js
           node --check sw.js
           node --check scripts/build-site.mjs
           node --check scripts/validate-journeys.mjs
