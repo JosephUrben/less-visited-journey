@@ -38,6 +38,7 @@ const APP_ASSETS = [
   "./enhancements.js",
   "./approval-integration.js",
   "./product-v4.js",
+  "./group-currency-guard.js",
   "./manifest.webmanifest",
   "./data/trip.json",
   "./data/journeys/chile-seen-differently.json",
